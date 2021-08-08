@@ -1,12 +1,12 @@
-# Crudgen
+# Crudboy
 
 ## Installation
 
 Execute:
 
-    $ gem install crudgen
+    $ gem install crudboy
 
 If system permission problems occurs, try with sudo:
 
-    $ sudo gem install crudgen
+    $ sudo gem install crudboy
 

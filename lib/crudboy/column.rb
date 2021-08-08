@@ -1,4 +1,4 @@
-module Crudgen
+module Crudboy
   class Column
 
     JAVA_TYPES = {

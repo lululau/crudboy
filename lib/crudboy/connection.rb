@@ -1,4 +1,4 @@
-module Crudgen
+module Crudboy
   class Connection
     class << self
       def open(options)

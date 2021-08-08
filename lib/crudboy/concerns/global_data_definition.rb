@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Crudgen
+module Crudboy
   module Concerns
     module GlobalDataDefinition
       extend ActiveSupport::Concern

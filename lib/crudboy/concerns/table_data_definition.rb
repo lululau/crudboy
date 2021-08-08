@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Crudgen
+module Crudboy
   module Concerns
     module TableDataDefinition
       extend ActiveSupport::Concern

@@ -1,5 +1,5 @@
-require 'crudgen/concerns'
-module Crudgen
+require 'crudboy/concerns'
+module Crudboy
   module Extension
     extend ActiveSupport::Concern
 
@@ -66,8 +66,8 @@ module Crudgen
       @table_name = @@options[:table_name]
       @model_name = @@options[:model_name]
       ActiveRecord::Base.connection.tap do |conn|
-        Object.const_set('CrudgenModel', Class.new(ActiveRecord::Base) do
-          include ::Crudgen::Concerns::TableDataDefinition
+        Object.const_set('CrudboyModel', Class.new(ActiveRecord::Base) do
+          include ::Crudboy::Concerns::TableDataDefinition
           self.abstract_class = true
         end)
 
@@ -75,8 +75,8 @@ module Crudgen
 
         table_comment = conn.table_comment(@table_name)
         conn.primary_key(@table_name).tap do |pkey|
-          Class.new(::CrudgenModel) do
-            include Crudgen::Extension
+          Class.new(::CrudboyModel) do
+            include Crudboy::Extension
             self.table_name = options[:table_name]
             if pkey.is_a?(Array)
               self.primary_keys = pkey

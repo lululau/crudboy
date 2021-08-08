@@ -2,7 +2,7 @@ require 'find'
 require 'net/ssh/gateway'
 require 'ostruct'
 
-module Crudgen
+module Crudboy
   class Bundle
     attr_accessor :path, :config, :result, :destination, :templates, :context
 

@@ -1,14 +1,14 @@
-require_relative 'lib/crudgen/version'
+require_relative 'lib/crudboy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "crudgen"
-  spec.version       = Crudgen::VERSION
+  spec.name          = "crudboy"
+  spec.version       = Crudboy::VERSION
   spec.authors       = ["Liu Xiang"]
   spec.email         = ["liuxiang921@gmail.com"]
 
   spec.summary       = %{CRUD code generator using Rails ActiveRecord}
   spec.description   = %{CRUD code generator using Rails ActiveRecord}
-  spec.homepage      = "https://github.com/lululau/crudgen"
+  spec.homepage      = "https://github.com/lululau/crudboy"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 

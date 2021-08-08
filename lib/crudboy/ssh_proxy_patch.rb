@@ -27,7 +27,7 @@ module Net
               raise ArgumentError, "unknown key: #{$1}"
             end
           }
-          command_line = '%s %s' % [CrudgenSetsidWrrapper, command_line]
+          command_line = '%s %s' % [CrudboySetsidWrrapper, command_line]
           begin
             io = IO.popen(command_line, "r+")
             begin

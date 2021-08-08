@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-CrudgenSetsidWrrapper = File.dirname(File.absolute_path(__FILE__)) + '/crudgen_setsid_wrapper'
-
-require "crudgen"
-
-Crudgen::Cli.start

@@ -1,7 +1,7 @@
 require 'optparse'
 require 'ostruct'
 
-module Crudgen
+module Crudboy
   class Cli
     class << self
       def start
@@ -18,18 +18,18 @@ module Crudgen
 
         OptionParser.new do |opts|
           opts.banner = <<~EOF
-          Usage: crudgen [options] [ruby file]
+          Usage: crudboy [options] [ruby file]
 
             If neither [ruby file] nor -e option specified, and STDIN is not a tty, a Pry REPL will be launched,
             otherwise the specified ruby file or -e option value or ruby code read from STDIN will be run, and no REPL launched
 
           EOF
 
-          opts.on('-cCONFIG_FILE', '--conf=CONFIG_FILE', 'Specify config file, default is $HOME/.crudgen.yml, or $HOME/.crudgen.d/init.yml.') do |config_file|
+          opts.on('-cCONFIG_FILE', '--conf=CONFIG_FILE', 'Specify config file, default is $HOME/.crudboy.yml, or $HOME/.crudboy.d/init.yml.') do |config_file|
             @options.config_file = config_file
           end
 
-          opts.on('-iINITIALIZER', '--initializer=INITIALIZER', 'Specify initializer ruby file, default is $HOME/.crudgen.rb, or $HOME/.crudgen.d/init.rb.') do |initializer|
+          opts.on('-iINITIALIZER', '--initializer=INITIALIZER', 'Specify initializer ruby file, default is $HOME/.crudboy.rb, or $HOME/.crudboy.d/init.rb.') do |initializer|
             @options.initializer = initializer
           end
 
@@ -49,7 +49,7 @@ module Crudgen
             @options.destination = destination
           end
 
-          opts.on('-bTEMPLATE_BUNDLE', '--bundle=TEMPLATE_BUNDLE', 'Specify template bundle, may be a path point to a .crudgen file or a directory') do |template_bundle|
+          opts.on('-bTEMPLATE_BUNDLE', '--bundle=TEMPLATE_BUNDLE', 'Specify template bundle, may be a path point to a .crudboy file or a directory') do |template_bundle|
             @options.template_bundle = template_bundle
           end
 
@@ -64,20 +64,20 @@ module Crudgen
       end
 
       def default_config_file
-        conf = File.expand_path('~/.crudgen.yml')
+        conf = File.expand_path('~/.crudboy.yml')
         return conf if File.file?(conf)
-        conf = File.expand_path('~/.crudgen.yaml')
+        conf = File.expand_path('~/.crudboy.yaml')
         return conf if File.file?(conf)
-        conf = File.expand_path('~/.crudgen.d/init.yml')
+        conf = File.expand_path('~/.crudboy.d/init.yml')
         return conf if File.file?(conf)
-        conf = File.expand_path('~/.crudgen.d/init.yaml')
+        conf = File.expand_path('~/.crudboy.d/init.yaml')
         return conf if File.file?(conf)
       end
 
       def default_initializer
-        conf = File.expand_path('~/.crudgen.rb')
+        conf = File.expand_path('~/.crudboy.rb')
         return conf if File.file?(conf)
-        conf = File.expand_path('~/.crudgen.d/init.rb')
+        conf = File.expand_path('~/.crudboy.d/init.rb')
         return conf if File.file?(conf)
       end
     end

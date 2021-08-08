@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    crudgen (0.1.0)
+    crudboy (0.1.0)
       activerecord (>= 6.0.3, < 6.2.0)
       activesupport (~> 6.0.3)
       composite_primary_keys (~> 12.0.3)
@@ -68,7 +68,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  crudgen!
+  crudboy!
   rake (~> 12.0)
 
 BUNDLED WITH

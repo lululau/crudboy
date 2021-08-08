@@ -1,6 +1,6 @@
 require 'erb'
 
-module Crudgen
+module Crudboy
   class Template
     attr_accessor :path, :base_path, :type, :context
 

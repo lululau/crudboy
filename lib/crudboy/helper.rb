@@ -1,4 +1,4 @@
-module Crudgen
+module Crudboy
   module Helper
     def lombok
       <<~EOF.chomp

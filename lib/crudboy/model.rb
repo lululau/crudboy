@@ -1,4 +1,4 @@
-module Crudgen
+module Crudboy
   class Model
     attr_accessor :active_record_model, :name, :table_name, :table_comment, :columns
 

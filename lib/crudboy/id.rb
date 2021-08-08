@@ -1,4 +1,4 @@
-module Crudgen
+module Crudboy
   class ID
     @worker_id_bits = 5
     @data_center_id_bits = 5
@@ -56,4 +56,4 @@ module Crudgen
   end
 end
 
-::ID = Crudgen::ID
+::ID = Crudboy::ID

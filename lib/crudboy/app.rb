@@ -1,6 +1,6 @@
 require 'net/ssh/gateway'
 
-module Crudgen
+module Crudboy
   class App
 
     class << self
@@ -15,8 +15,8 @@ module Crudgen
       require 'active_support/all'
       require 'active_record'
       require 'composite_primary_keys'
-      require "crudgen/connection"
-      require "crudgen/definition"
+      require "crudboy/connection"
+      require "crudboy/definition"
       @options = options
       App.env = @options.env
       App.connect_options = connect_options
@@ -50,7 +50,7 @@ module Crudgen
 
     def start_ssh_proxy!
       ssh_config = effective_config[:ssh]
-      local_ssh_proxy_port = Crudgen::SSHProxy.connect(
+      local_ssh_proxy_port = Crudboy::SSHProxy.connect(
         ssh_config.slice(:host, :user, :port, :password).merge(
           forward_host: effective_config[:host],
           forward_port: effective_config[:port],

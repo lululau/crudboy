@@ -1,7 +1,7 @@
 require 'net/ssh/gateway'
-require 'crudgen/ssh_proxy_patch'
+require 'crudboy/ssh_proxy_patch'
 
-module Crudgen
+module Crudboy
   class SSHProxy
     class << self
 

@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+CrudboySetsidWrrapper = File.dirname(File.absolute_path(__FILE__)) + '/crudboy_setsid_wrapper'
+
+require "crudboy"
+
+Crudboy::Cli.start

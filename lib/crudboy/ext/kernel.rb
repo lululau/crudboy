@@ -1,8 +1,8 @@
-require 'crudgen/concerns'
+require 'crudboy/concerns'
 module Kernel
   CSV_BOM = "\xef\xbb\xbf"
 
-  include ::Crudgen::Concerns::GlobalDataDefinition
+  include ::Crudboy::Concerns::GlobalDataDefinition
 
   def sql(sql)
     ActiveRecord::Base.connection.exec_query(sql)
