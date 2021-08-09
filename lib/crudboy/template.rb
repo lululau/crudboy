@@ -21,6 +21,7 @@ module Crudboy
       @context.eval(@base_path).tap do |path|
         File.join(destination, path).tap do |full_path|
           FileUtils.mkdir_p(full_path)
+          puts "mkdir -p: #{full_path}"
         end
       end
     end
@@ -30,6 +31,7 @@ module Crudboy
         File.dirname(path).tap do |base_dir|
           File.join(destination, base_dir).tap do |full_path|
             FileUtils.mkdir_p(full_path)
+            puts "mkdir -p: #{full_path}"
           end
         end
       end
@@ -53,6 +55,7 @@ module Crudboy
         render_file.tap do |file_content|
           File.join(destination, @context.eval(@base_path.delete_suffix('.erb'))).tap do |path|
             IO.write(path, file_content)
+            puts "Write file: #{path}"
           end
         end
       end
