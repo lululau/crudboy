@@ -35,8 +35,8 @@ module Crudboy
     def java_doc
       <<-EOF.lstrip.chomp
       /**
-       * #{comment}
-       */
+     * #{comment}
+     */
       EOF
     end
 
