@@ -9,6 +9,11 @@ module Crudboy
         App.new(@options).run!
       end
 
+      def config_template_bundle(template_bundle)
+        return template_bundle if File.exist?(template_bundle)
+        File.join(File.expand_path("~/.crudboy.d"), 'bundles', template_bundle)
+      end
+
       def parse_options!
         @options = OpenStruct.new(config_file: default_config_file,
                                   initializer: default_initializer,
@@ -50,7 +55,7 @@ module Crudboy
           end
 
           opts.on('-bTEMPLATE_BUNDLE', '--bundle=TEMPLATE_BUNDLE', 'Specify template bundle, may be a path point to a .crudboy file or a directory') do |template_bundle|
-            @options.template_bundle = template_bundle
+            @options.template_bundle = config_template_bundle(template_bundle)
           end
 
           opts.on('', '--help', 'Prints this help') do
