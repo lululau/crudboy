@@ -4,6 +4,7 @@ module Crudboy
     JAVA_TYPES = {
       "varchar" => 'String',
       "char" => 'String',
+      "text" => 'String',
       "int" => 'Integer',
       "bigint" => 'Long',
       "tinyint" => 'Byte',
@@ -16,6 +17,7 @@ module Crudboy
     JDBC_TYPES = {
       "varchar" => 'VARCHAR',
       "char" => 'CHAR',
+      "text" => 'TEXT',
       "int" => 'INTEGER',
       "bigint" => 'BIGINT',
       "tinyint" => 'TINYINT',
