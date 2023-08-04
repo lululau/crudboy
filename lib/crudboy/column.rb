@@ -11,6 +11,7 @@ module Crudboy
       "date" => 'LocalDate',
       "datetime" => 'LocalDateTime',
       "timestamp" => 'LocalDateTime',
+      "time" => 'LocalTime',
       "decimal" => 'BigDecimal'
     }
 
@@ -24,6 +25,7 @@ module Crudboy
       "date" => 'TIMESTAMP',
       "datetime" => 'TIMESTAMP',
       "timestamp" => 'TIMESTAMP',
+      "time" => 'TIME',
       "decimal" => 'DECIMAL'
     }
 
