@@ -5,13 +5,17 @@ module Crudboy
       "varchar" => 'String',
       "char" => 'String',
       "text" => 'String',
+      "longtext" => 'String',
       "int" => 'Integer',
+      "smallint" => 'Integer',
       "bigint" => 'Long',
       "tinyint" => 'Byte',
+      "double" => 'Double',
       "date" => 'LocalDate',
       "datetime" => 'LocalDateTime',
       "timestamp" => 'LocalDateTime',
       "time" => 'LocalTime',
+      "blob" => 'byte[]',
       "decimal" => 'BigDecimal'
     }
 
@@ -19,13 +23,17 @@ module Crudboy
       "varchar" => 'VARCHAR',
       "char" => 'CHAR',
       "text" => 'TEXT',
+      "longtext" => 'LONGVARCHAR',
       "int" => 'INTEGER',
+      "smallint" => 'INTEGER',
       "bigint" => 'BIGINT',
       "tinyint" => 'TINYINT',
+      "double" => 'DOUBLE',
       "date" => 'TIMESTAMP',
       "datetime" => 'TIMESTAMP',
       "timestamp" => 'TIMESTAMP',
       "time" => 'TIME',
+      "blob" => 'BLOB',
       "decimal" => 'DECIMAL'
     }
 
