@@ -3,12 +3,13 @@ module Crudboy
 
     include Helper
 
-    attr_accessor :model, :columns, :table_name, :model_name, :bundle_options
+    attr_accessor :model, :columns, :table_name, :table_comment, :model_name, :bundle_options
 
     def initialize(definition)
       @model = definition.model
       @model_name = definition.model_name
       @table_name = definition.table_name
+      @table_comment = definition.table_comment
       @columns = @model.columns
     end
 

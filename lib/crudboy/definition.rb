@@ -59,7 +59,7 @@ module Crudboy
 
   class Definition
 
-    attr_accessor :table_name, :model, :model_name
+    attr_accessor :table_name, :model, :model_name, :table_comment
 
     def initialize(options)
       @@options = options
@@ -74,6 +74,7 @@ module Crudboy
         raise "Table not exist: #{@table_name}" unless conn.tables.include?(@table_name)
 
         table_comment = conn.table_comment(@table_name)
+        @table_comment = table_comment
         conn.primary_key(@table_name).tap do |pkey|
           Class.new(::CrudboyModel) do
             include Crudboy::Extension
