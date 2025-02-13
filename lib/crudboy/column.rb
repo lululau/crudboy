@@ -22,8 +22,8 @@ module Crudboy
     JDBC_TYPES = {
       "varchar" => 'VARCHAR',
       "char" => 'CHAR',
-      "text" => 'TEXT',
-      "longtext" => 'LONGVARCHAR',
+      "text" => 'VARCHAR',
+      "longtext" => 'VARCHAR',
       "int" => 'INTEGER',
       "smallint" => 'INTEGER',
       "bigint" => 'BIGINT',
