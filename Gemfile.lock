@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    crudboy (0.1.6)
+    crudboy (0.1.7)
       activerecord (>= 6.0.3, < 6.2.0)
       activesupport (~> 6.0.3)
       composite_primary_keys (~> 12.0.3)
