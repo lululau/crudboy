@@ -14,6 +14,14 @@ module Crudboy
       columns.find { |c| c.name == active_record_model.primary_key }
     end
 
+    def created_at_column
+      columns.find { |c| c.created_at_column? }
+    end
+
+    def updated_at_column
+      columns.find { |c| c.updated_at_column? }
+    end
+
     def regular_columns
       columns.reject { |c| c.name == active_record_model.primary_key }
     end
