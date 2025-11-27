@@ -116,7 +116,14 @@ module Crudboy
     end
 
     def py_sqlmodel_primary_column_declaration
-      format('%s: %s = Field(default_factory=gen_id, primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+      raw_type = sql_type.scan(/^\w+/).first
+      if raw_type == 'varchar'
+        format('%s: %s = Field(default_factory=gen_uuid, primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+      elsif raw_type == 'bigint'
+        format('%s: %s = Field(default_factory=gen_bigint_id, primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+      else
+        format('%s: %s = Field(primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+      end
     end
 
     def py_dto_column_declaration(optional = false)
