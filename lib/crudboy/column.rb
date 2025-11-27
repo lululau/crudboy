@@ -120,9 +120,9 @@ module Crudboy
       if raw_type == 'varchar'
         format('%s: %s = Field(default_factory=gen_uuid, primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
       elsif raw_type == 'bigint'
-        format('%s: %s = Field(default_factory=gen_bigint_id, primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+        format('%s: %s = Field(default_factory=gen_bigint_id, primary_key=True,description="%s")', name, python_type, comment)
       else
-        format('%s: %s = Field(primary_key=True, max_length=%s, description="%s")', name, python_type, limit, comment)
+        format('%s: %s = Field(primary_key=True, description="%s")', name, python_type, comment)
       end
     end
 
